@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbolic &amp; Trustworthy Reasoning · EMNLP 2026 BoF</title>
+<meta name="description" content="EMNLP 2026 Birds of a Feather session on symbolic and trustworthy reasoning across language and vision. Budapest, 27 October 2026, 9:00–10:30, Room G12.">
+<meta property="og:title" content="Symbolic and Trustworthy Reasoning Across Language and Vision">
+<meta property="og:description" content="EMNLP 2026 Birds of a Feather · Budapest · 27 Oct, 9:00–10:30 · Room G12">
+<meta property="og:image" content="img/poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1f4a3a; --green-deep:#173a2d; --lime:#a9d13f; --ink:#1b2a24; --muted:#5b6b64;
+    --paper:#f6f8f5; --card:#ffffff; --line:#dfe6e1; --tint:#eaf1ec;
+    --serif:"Source Serif 4", Georgia, serif; --sans:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans)}
+  a{color:var(--green)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:var(--serif);line-height:1.2;margin:0}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem);color:var(--green);margin-bottom:.4rem}
+  .lede{color:var(--muted);margin:0 0 1.8rem;max-width:62ch}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+
+  nav{position:sticky;top:0;z-index:5;background:rgba(23,58,45,.96);backdrop-filter:blur(6px)}
+  nav .wrap{display:flex;gap:22px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+  nav a{color:#dfeadf;text-decoration:none;font-size:.92rem;font-weight:500}
+  nav a:hover{color:var(--lime)}
+  nav .brand{font-family:var(--serif);font-weight:700;color:#fff;margin-right:auto}
+
+  header{background:var(--green);color:#fff;padding:56px 0 64px}
+  header .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:center}
+  .pill{display:inline-block;background:var(--green-deep);border:1px solid #2f6650;border-radius:99px;padding:6px 14px;font-size:.85rem;font-weight:600;letter-spacing:.02em}
+  header h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:20px 0 18px}
+  header h1 em{font-style:normal;color:var(--lime)}
+  .overview{font-size:1.08rem;color:#d7e5dc;max-width:58ch;margin:0 0 24px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;padding:0;list-style:none}
+  .facts li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:8px 14px;font-size:.92rem}
+  .facts b{color:var(--lime);font-weight:600;margin-right:6px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;border-radius:10px;padding:11px 18px;font-weight:600;text-decoration:none;font-size:.95rem}
+  .btn-lime{background:var(--lime);color:var(--green-deep)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-outline{border:1px solid var(--green);color:var(--green)}
+  .poster img{width:100%;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);display:block}
+  .organizer{font-size:.9rem;color:#bcd0c4;margin-top:22px}
+
+  .question{background:var(--tint);border-left:4px solid var(--lime);border-radius:8px;padding:18px 22px;font-family:var(--serif);font-size:1.25rem;color:var(--green);margin:0}
+
+  .timeline{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .timeline li{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .timeline li:last-child{border-bottom:0}
+  .timeline time{font-weight:600;color:var(--green);font-variant-numeric:tabular-nums}
+  .timeline .t{font-weight:600}
+  .timeline .s{color:var(--muted);font-size:.93rem}
+  .timeline .sub{grid-column:2}
+
+  .talks{display:grid;gap:18px}
+  .talk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+  .talk .kicker{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .talk h3{font-size:1.28rem;margin:6px 0 4px;color:var(--ink)}
+  .talk .who{color:var(--green);font-weight:600;margin:0 0 12px}
+  .talk .who span{color:var(--muted);font-weight:400}
+  .talk p{margin:0 0 12px}
+  .talk .links{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;margin-top:4px}
+  .talk.opening{border-color:var(--green);border-width:2px}
+
+  .panel{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .person{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .person img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--tint)}
+  .person div{padding:14px 16px 18px}
+  .person h3{font-size:1.08rem}
+  .person .org{color:var(--green);font-weight:600;font-size:.9rem;margin:2px 0 6px}
+  .person .focus{color:var(--muted);font-size:.9rem;margin:0}
+  .qs{counter-reset:q;list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .qs li{counter-increment:q;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 52px;position:relative}
+  .qs li::before{content:counter(q);position:absolute;left:16px;top:13px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;font-size:.8rem;font-weight:600;display:grid;place-items:center}
+
+  .viewer{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .viewer object{display:block;width:100%;height:min(78vh,760px);border:0}
+  .viewer .fallback{padding:40px 24px;text-align:center;color:var(--muted)}
+  .slide-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+
+  footer{background:var(--green-deep);color:#bcd0c4;padding:32px 0;font-size:.9rem}
+  footer a{color:var(--lime)}
+
+  @media (max-width:860px){
+    header .wrap{grid-template-columns:1fr}
+    .poster{max-width:420px}
+    .panel{grid-template-columns:repeat(2,1fr)}
+    .qs{grid-template-columns:1fr}
+    .viewer object{height:70vh}
+  }
+  @media (max-width:520px){
+    section{padding:48px 0}
+    .wrap{padding:0 16px}
+    .panel{gap:12px}
+    .timeline li{grid-template-columns:56px 1fr;padding:14px 16px}
+    .talk{padding:20px}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">BoF · EMNLP 2026</a>
+    <a href="#program">Program</a>
+    <a href="#talks">Lightning talks</a>
+    <a href="#panel">Panel</a>
+    <a href="#slides">Slides</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div>
+      <span class="pill">EMNLP 2026 · Birds of a Feather</span>
+      <h1><em>Symbolic</em> and <em>Trustworthy</em> Reasoning Across Language and Vision</h1>
+      <p class="overview">How and when can structured and symbolic methods make reasoning more verifiable and trustworthy? This session brings together people who build symbolic and structured reasoning systems and people who work on making model reasoning faithful, across both language and vision, for a panel, lightning talks and an open discussion.</p>
+      <ul class="facts">
+        <li><b>Where</b>Room G12, Budapest</li>
+        <li><b>When</b>Tue 27 October 2026</li>
+        <li><b>Time</b>9:00–10:30 AM</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-lime" href="#slides">View the slides</a>
+        <a class="btn btn-ghost" href="#program">See the program</a>
+      </div>
+      <p class="organizer">Organized by Shreya Rajpal, Michigan State University</p>
+    </div>
+    <div class="poster">
+      <img src="img/poster.jpg" alt="Session poster: EMNLP 2026 Birds of a Feather session, Symbolic and Trustworthy Reasoning Across Language and Vision, Budapest, Room G12, 27 October 2026, 9:00–10:30 AM" width="900" height="900">
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="program">
+  <div class="wrap">
+    <h2>Program</h2>
+    <p class="lede">90 minutes, with questions welcome throughout.</p>
+    <ol class="timeline">
+      <li><time>9:00</time><div><div class="t">Welcome &amp; panel introductions</div></div></li>
+      <li><time>9:06</time><div><div class="t">Opening lightning talk</div><div class="s">Shreya Rajpal: When does structure make reasoning trustworthy?</div></div></li>
+      <li><time>9:15</time><div><div class="t">Three lightning talks</div><div class="s">5 min talk + 5 min discussion each: Gokul S Krishnan · Qingjing Chen · Sky Chenwei Wan</div></div></li>
+      <li><time>9:45</time><div><div class="t">Panel discussion</div><div class="s">Daniel Preotiuc-Pietro · Leslie Barrett · Parisa Kordjamshidi · Artem Shelmanov</div></div></li>
+      <li><time>10:15</time><div><div class="t">Audience Q&amp;A &amp; open discussion</div></div></li>
+      <li><time>10:30</time><div><div class="t">Close</div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap">
+    <h2>Lightning talks</h2>
+    <p class="lede">Short talks on using structure, logic and interpretable models to make reasoning more faithful and checkable, across spatial, legal, medical and time-series settings.</p>
+    <div class="talks">
+
+      <article class="talk opening">
+        <div class="kicker">Opening talk · 9:06</div>
+        <h3>When does structure make reasoning trustworthy?</h3>
+        <p class="who">Shreya Rajpal <span>· Michigan State University</span></p>
+        <p>When LLMs reason over spatial stories in plain text, they hallucinate relations, and accuracy falls from 93% to 27% as the number of reasoning hops grows. Translating the text into symbolic forms such as relational triples, grids and Prolog coordinates keeps reasoning stable, improves accuracy by 42% and fixes 64% of hallucinations. SATURN applies the same approach to images: it parses 3D scenes and runs LLM-written symbolic programs. The talk ends with an open question about how to check the translation step itself.</p>
+        <div class="links">
+          <span>Rajpal, Premsri &amp; Kordjamshidi, Findings of EMNLP 2026</span>
+          <span>Kamali et al., SATURN, EMNLP 2026</span>
+        </div>
+      </article>
+
+      <article class="talk">
+        <div class="kicker">Lightning talk 1 of 3</div>
+        <h3>Transforming Interpretability Gains to Explainability Wins</h3>
+        <p class="who">Gokul S Krishnan <span>· Senior Research Scientist, Centre for Responsible AI (CeRAI), IIT Madras</span></p>
+        <p>Models that are interpretable by construction, such as Kolmogorov–Arnold Networks (KANs), are getting more accurate. It is still unclear whether that internal transparency gives people better explanations. This talk presents KANEx (MICCAI 2026), which reads saliency maps directly from KAN spline functions for chest X-ray classification instead of approximating them with Grad-CAM. These maps localize better and are more faithful, and grounding a VLM's written explanations in them makes those explanations about 10% more correct. The talk builds on Gokul's work on LExT, a metric for the faithfulness and plausibility of natural-language explanations.</p>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2607.24730">KANEx paper</a>
+          <a href="https://github.com/cerai-iitm/KANEx">Code</a>
+          <a href="https://cerai.iitm.ac.in/people/gokul-s-krishnan">Profile</a>
+        </div>
+      </article>
+
+      <article class="talk">
+        <div class="kicker">Lightning talk 2 of 3 · EMNLP Findings 2026</div>
+        <h3>LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning</h3>
+        <p class="who">Qingjing Chen <span>· PhD candidate, University of Bologna</span></p>
+        <p>In law, textual similarity is not legal relevance. LEGO retrieves provisions from an expert-built Civil Law graph of 318 concepts and 409 rule cards linked to over 1,200 Civil Code articles. Its retrieval step picks provisions by how many legal issues they cover, not by surface similarity. A second component, ExpertCoT, then reasons as a legal syllogism: provision, then fact, then conclusion. With an 8B model, LEGO beats GPT-5 and DeepSeek-V3 on multi-hop legal exam questions and stays stable on questions needing four or more hops. Next steps include deontic and defeasible logic and SMT-based verification.</p>
+        <div class="links">
+          <a href="https://github.com/BLK-WHT/LEGO">Code &amp; data</a>
+          <a href="https://www.unibo.it/sitoweb/qingjing.chen2/en">Profile</a>
+        </div>
+      </article>
+
+      <article class="talk">
+        <div class="kicker">Lightning talk 3 of 3 · EMNLP 2026 Main</div>
+        <h3>Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents</h3>
+        <p class="who">Sky Chenwei Wan <span>· PhD student, SLB AI Lab &amp; Télécom Paris, France</span></p>
+        <p>Experts often describe events in sensor data in words, for example "pressure recovers slightly while volume stays stable", because dense labels are expensive to collect. SELA compiles these descriptions into Event Logic Trees built on Allen's interval algebra. VLM agents then find each primitive pattern in the signals and combine the evidence under temporal constraints. Detection works zero-shot, and every detection comes with an evidence tree an expert can inspect. Removing the logic structure costs about 21 points of strict-localization F1.</p>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2603.11479">Paper</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="panel">
+  <div class="wrap">
+    <h2>Panel</h2>
+    <p class="lede">Researchers from industry and academia working on structured reasoning, faithfulness, multimodal symbolic reasoning and uncertainty.</p>
+    <div class="panel">
+      <div class="person"><img src="img/preotiucpietro.jpg" alt="Daniel Preotiuc-Pietro" loading="lazy"><div><h3>Daniel Preotiuc-Pietro</h3><p class="org">Bloomberg</p><p class="focus">Structured reasoning &amp; calibration</p></div></div>
+      <div class="person"><img src="img/barrett.jpg" alt="Leslie Barrett" loading="lazy"><div><h3>Leslie Barrett</h3><p class="org">Bloomberg Law</p><p class="focus">Faithful &amp; structured reasoning</p></div></div>
+      <div class="person"><img src="img/kordjamshidi.jpg" alt="Parisa Kordjamshidi" loading="lazy"><div><h3>Parisa Kordjamshidi</h3><p class="org">Michigan State University</p><p class="focus">Language, vision &amp; symbolic reasoning</p></div></div>
+      <div class="person"><img src="img/shelmanov.jpg" alt="Artem Shelmanov" loading="lazy"><div><h3>Artem Shelmanov</h3><p class="org">MBZUAI</p><p class="focus">Uncertainty &amp; reliable LLMs</p></div></div>
+    </div>
+    <ol class="qs" aria-label="Panel questions">
+      <li>How can neuro-symbolic AI make reasoning more trustworthy?</li>
+      <li>When do rules and programs help, and how should they pair with foundation models?</li>
+      <li>Beyond accuracy, what evidence shows that reasoning is trustworthy?</li>
+      <li>Where should neuro-symbolic and trustworthy reasoning go next?</li>
+    </ol>
+  </div>
+</section>
+
+<section id="slides">
+  <div class="wrap">
+    <h2>Slides</h2>
+    <p class="lede">The session slides: overview, program, panel, opening talk and panel questions.</p>
+    <div class="slide-actions">
+      <a class="btn btn-green" href="slides/symbolic-trustworthy-reasoning-bof.pdf" target="_blank" rel="noopener">Open full screen</a>
+      <a class="btn btn-outline" href="slides/symbolic-trustworthy-reasoning-bof.pdf" download>Download PDF</a>
+    </div>
+    <div class="viewer">
+      <object data="slides/symbolic-trustworthy-reasoning-bof.pdf#view=FitH" type="application/pdf" aria-label="Session slides (PDF)">
+        <div class="fallback">Your browser can't show the PDF here. <a href="slides/symbolic-trustworthy-reasoning-bof.pdf">Open or download the slides</a>.</div>
+      </object>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Birds of a Feather session at <a href="https://2026.emnlp.org/">EMNLP 2026</a>, Budapest · Organized by Shreya Rajpal, Michigan State University
+  </div>
+</footer>
+
+</body>
+</html>
