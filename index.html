@@ -7,7 +7,6 @@
 <meta name="description" content="EMNLP 2026 Birds of a Feather session on symbolic and trustworthy reasoning across language and vision. Budapest, 27 October 2026, 9:00–10:30, Room G12.">
 <meta property="og:title" content="Symbolic and Trustworthy Reasoning Across Language and Vision">
 <meta property="og:description" content="EMNLP 2026 Birds of a Feather · Budapest · 27 Oct, 9:00–10:30 · Room G12">
-<meta property="og:image" content="img/poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,13 +27,17 @@
   section{padding:64px 0;border-top:1px solid var(--line)}
 
   nav{position:sticky;top:0;z-index:5;background:rgba(23,58,45,.96);backdrop-filter:blur(6px)}
-  nav .wrap{display:flex;gap:22px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+  nav .wrap{display:flex;gap:22px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  nav .wrap::-webkit-scrollbar{display:none}
   nav a{color:#dfeadf;text-decoration:none;font-size:.92rem;font-weight:500}
   nav a:hover{color:var(--lime)}
   nav .brand{font-family:var(--serif);font-weight:700;color:#fff;margin-right:auto}
 
   header{background:var(--green);color:#fff;padding:56px 0 64px}
   header .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:center}
+  header .wrap>*{min-width:0}
+  h1,h2,h3{overflow-wrap:break-word}
+  .logo-row div{min-width:0}
   .pill{display:inline-block;background:var(--green-deep);border:1px solid #2f6650;border-radius:99px;padding:6px 14px;font-size:.85rem;font-weight:600;letter-spacing:.02em}
   header h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:20px 0 18px}
   header h1 em{font-style:normal;color:var(--lime)}
@@ -48,7 +51,16 @@
   .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
   .btn-green{background:var(--green);color:#fff}
   .btn-outline{border:1px solid var(--green);color:var(--green)}
-  .poster img{width:100%;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);display:block}
+  .logos{background:#fff;border-radius:16px;padding:28px;display:grid;gap:24px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+  .logo-row{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink)}
+  .logo-row img{display:block;flex:none}
+  .logo-row .msu{width:64px;height:auto}
+  .logo-row .hlr{width:110px;height:auto}
+  .logo-row strong{display:block;font-family:var(--serif);font-size:1.12rem;color:var(--green)}
+  .logo-row span{font-size:.88rem;color:var(--muted)}
+  .logos hr{border:0;border-top:1px solid var(--line);margin:0}
+  .footer-logos{display:flex;align-items:center;gap:18px;margin-bottom:14px}
+  .footer-logos img{background:#fff;border-radius:8px;padding:6px;height:52px;width:auto}
   .organizer{font-size:.9rem;color:#bcd0c4;margin-top:22px}
 
   .question{background:var(--tint);border-left:4px solid var(--lime);border-radius:8px;padding:18px 22px;font-family:var(--serif);font-size:1.25rem;color:var(--green);margin:0}
@@ -68,7 +80,12 @@
   .talk .who{color:var(--green);font-weight:600;margin:0 0 12px}
   .talk .who span{color:var(--muted);font-weight:400}
   .talk p{margin:0 0 12px}
-  .talk .links{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;margin-top:4px}
+  .papers{list-style:none;margin:6px 0 0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.92rem}
+  .papers li{padding-left:22px;position:relative}
+  .papers li::before{content:"";position:absolute;left:4px;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--lime)}
+  .papers a{font-weight:600;text-decoration:none;border-bottom:1px solid rgba(31,74,58,.3)}
+  .papers a:hover{border-bottom-color:var(--green)}
+  .papers .venue{color:var(--muted)}
   .talk.opening{border-color:var(--green);border-width:2px}
 
   .panel{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -92,7 +109,7 @@
 
   @media (max-width:860px){
     header .wrap{grid-template-columns:1fr}
-    .poster{max-width:420px}
+    .logos{max-width:440px}
     .panel{grid-template-columns:repeat(2,1fr)}
     .qs{grid-template-columns:1fr}
     .viewer object{height:70vh}
@@ -135,8 +152,10 @@
       </div>
       <p class="organizer">Organized by Shreya Rajpal, Michigan State University</p>
     </div>
-    <div class="poster">
-      <img src="img/poster.jpg" alt="Session poster: EMNLP 2026 Birds of a Feather session, Symbolic and Trustworthy Reasoning Across Language and Vision, Budapest, Room G12, 27 October 2026, 9:00–10:30 AM" width="900" height="900">
+    <div class="logos" aria-label="Organized at">
+      <a class="logo-row" href="https://msu.edu/"><img class="msu" src="img/msu-spartan.svg" alt="Michigan State University Spartan helmet logo" width="64" height="74"><div><strong>Michigan State University</strong><span>East Lansing, Michigan</span></div></a>
+      <hr>
+      <a class="logo-row" href="https://hlr.github.io/"><img class="hlr" src="img/hlr-logo.png" alt="Heterogeneous Learning and Reasoning (HLR) Lab logo" width="110" height="92"><div><strong>HLR Lab</strong><span>Heterogeneous Learning and Reasoning</span></div></a>
     </div>
   </div>
 </header>
@@ -168,10 +187,10 @@
         <h3>When does structure make reasoning trustworthy?</h3>
         <p class="who">Shreya Rajpal <span>· Michigan State University</span></p>
         <p>When LLMs reason over spatial stories in plain text, they hallucinate relations, and accuracy falls from 93% to 27% as the number of reasoning hops grows. Translating the text into symbolic forms such as relational triples, grids and Prolog coordinates keeps reasoning stable, improves accuracy by 42% and fixes 64% of hallucinations. SATURN applies the same approach to images: it parses 3D scenes and runs LLM-written symbolic programs. The talk ends with an open question about how to check the translation step itself.</p>
-        <div class="links">
-          <span>Rajpal, Premsri &amp; Kordjamshidi, Findings of EMNLP 2026</span>
-          <span>Kamali et al., SATURN, EMNLP 2026</span>
-        </div>
+        <ul class="papers">
+          <li><a href="https://arxiv.org/abs/2606.31285">Spatial Reasoning via Modality Switching Between Language and Symbolic Representations</a>. <span class="venue">Shreya Rajpal, Tanawan Premsri, Parisa Kordjamshidi. Findings of EMNLP 2026</span></li>
+          <li><a href="https://arxiv.org/abs/2606.22694">SATURN: Symbolic Spatial Reasoning for Multi-Perspective Grounding</a>. <span class="venue">Danial Kamali, Tanawan Premsri, Shreya Rajpal, Amir Zadeh, Chuan Li, Parisa Kordjamshidi. EMNLP 2026</span></li>
+        </ul>
       </article>
 
       <article class="talk">
@@ -179,11 +198,10 @@
         <h3>Transforming Interpretability Gains to Explainability Wins</h3>
         <p class="who">Gokul S Krishnan <span>· Senior Research Scientist, Centre for Responsible AI (CeRAI), IIT Madras</span></p>
         <p>Models that are interpretable by construction, such as Kolmogorov–Arnold Networks (KANs), are getting more accurate. It is still unclear whether that internal transparency gives people better explanations. This talk presents KANEx (MICCAI 2026), which reads saliency maps directly from KAN spline functions for chest X-ray classification instead of approximating them with Grad-CAM. These maps localize better and are more faithful, and grounding a VLM's written explanations in them makes those explanations about 10% more correct. The talk builds on Gokul's work on LExT, a metric for the faithfulness and plausibility of natural-language explanations.</p>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2607.24730">KANEx paper</a>
-          <a href="https://github.com/cerai-iitm/KANEx">Code</a>
-          <a href="https://cerai.iitm.ac.in/people/gokul-s-krishnan">Profile</a>
-        </div>
+        <ul class="papers">
+          <li><a href="https://arxiv.org/abs/2607.24730">KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability</a>. <span class="venue">MICCAI 2026</span></li>
+          <li><a href="https://arxiv.org/abs/2504.06227">LExT: Towards Evaluating Trustworthiness of Natural Language Explanations</a>. <span class="venue">FAccT 2025</span></li>
+        </ul>
       </article>
 
       <article class="talk">
@@ -191,10 +209,9 @@
         <h3>LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning</h3>
         <p class="who">Qingjing Chen <span>· PhD candidate, University of Bologna</span></p>
         <p>In law, textual similarity is not legal relevance. LEGO retrieves provisions from an expert-built Civil Law graph of 318 concepts and 409 rule cards linked to over 1,200 Civil Code articles. Its retrieval step picks provisions by how many legal issues they cover, not by surface similarity. A second component, ExpertCoT, then reasons as a legal syllogism: provision, then fact, then conclusion. With an 8B model, LEGO beats GPT-5 and DeepSeek-V3 on multi-hop legal exam questions and stays stable on questions needing four or more hops. Next steps include deontic and defeasible logic and SMT-based verification.</p>
-        <div class="links">
-          <a href="https://github.com/BLK-WHT/LEGO">Code &amp; data</a>
-          <a href="https://www.unibo.it/sitoweb/qingjing.chen2/en">Profile</a>
-        </div>
+        <ul class="papers">
+          <li><a href="https://arxiv.org/abs/2609.27009">LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning</a>. <span class="venue">Findings of EMNLP 2026</span></li>
+        </ul>
       </article>
 
       <article class="talk">
@@ -202,9 +219,9 @@
         <h3>Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents</h3>
         <p class="who">Sky Chenwei Wan <span>· PhD student, SLB AI Lab &amp; Télécom Paris, France</span></p>
         <p>Experts often describe events in sensor data in words, for example "pressure recovers slightly while volume stays stable", because dense labels are expensive to collect. SELA compiles these descriptions into Event Logic Trees built on Allen's interval algebra. VLM agents then find each primitive pattern in the signals and combine the evidence under temporal constraints. Detection works zero-shot, and every detection comes with an evidence tree an expert can inspect. Removing the logic structure costs about 21 points of strict-localization F1.</p>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2603.11479">Paper</a>
-        </div>
+        <ul class="papers">
+          <li><a href="https://arxiv.org/abs/2603.11479">Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents</a>. <span class="venue">EMNLP 2026 (Main)</span></li>
+        </ul>
       </article>
 
     </div>
@@ -249,7 +266,8 @@
 
 <footer>
   <div class="wrap">
-    Birds of a Feather session at <a href="https://2026.emnlp.org/">EMNLP 2026</a>, Budapest · Organized by Shreya Rajpal, Michigan State University
+    <div class="footer-logos"><img src="img/msu-spartan.svg" alt="Michigan State University"><img src="img/hlr-logo.png" alt="HLR Lab"></div>
+    Birds of a Feather session at <a href="https://2026.emnlp.org/">EMNLP 2026</a>, Budapest · Organized by Shreya Rajpal, <a href="https://hlr.github.io/">HLR Lab</a>, Michigan State University
   </div>
 </footer>
 
