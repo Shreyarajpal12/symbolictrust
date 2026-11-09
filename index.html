@@ -103,6 +103,12 @@
   .viewer object{display:block;width:100%;height:min(78vh,760px);border:0}
   .viewer .fallback{padding:40px 24px;text-align:center;color:var(--muted)}
   .slide-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .tab{font:600 .92rem var(--sans);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:9px 16px;cursor:pointer;text-align:left}
+  .tab span{font-weight:400;color:var(--muted)}
+  .tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff}
+  .tab[aria-selected="true"] span{color:#cfe0d5}
+  .deck-link{display:inline-block;margin-top:12px;font-weight:600;font-size:.92rem}
 
   footer{background:var(--green-deep);color:#bcd0c4;padding:32px 0;font-size:.9rem}
   footer a{color:var(--lime)}
@@ -191,6 +197,7 @@
           <li><a href="https://arxiv.org/abs/2606.31285">Spatial Reasoning via Modality Switching Between Language and Symbolic Representations</a>. <span class="venue">Shreya Rajpal, Tanawan Premsri, Parisa Kordjamshidi. Findings of EMNLP 2026</span></li>
           <li><a href="https://arxiv.org/abs/2606.22694">SATURN: Symbolic Spatial Reasoning for Multi-Perspective Grounding</a>. <span class="venue">Danial Kamali, Tanawan Premsri, Shreya Rajpal, Amir Zadeh, Chuan Li, Parisa Kordjamshidi. EMNLP 2026</span></li>
         </ul>
+        <a class="deck-link" href="#slides" data-show="session">View slides →</a>
       </article>
 
       <article class="talk">
@@ -212,6 +219,7 @@
         <ul class="papers">
           <li><a href="https://arxiv.org/abs/2609.27009">LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning</a>. <span class="venue">Findings of EMNLP 2026</span></li>
         </ul>
+        <a class="deck-link" href="#slides" data-show="lego">View slides →</a>
       </article>
 
       <article class="talk">
@@ -222,6 +230,7 @@
         <ul class="papers">
           <li><a href="https://arxiv.org/abs/2603.11479">Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents</a>. <span class="venue">EMNLP 2026 (Main)</span></li>
         </ul>
+        <a class="deck-link" href="#slides" data-show="sela">View slides →</a>
       </article>
 
     </div>
@@ -250,13 +259,18 @@
 <section id="slides">
   <div class="wrap">
     <h2>Slides</h2>
-    <p class="lede">The session slides: overview, program, panel, opening talk and panel questions.</p>
-    <div class="slide-actions">
-      <a class="btn btn-green" href="slides/symbolic-trustworthy-reasoning-bof.pdf" target="_blank" rel="noopener">Open full screen</a>
-      <a class="btn btn-outline" href="slides/symbolic-trustworthy-reasoning-bof.pdf" download>Download PDF</a>
+    <p class="lede">The session slides (overview, program, panel, opening talk and panel questions) and the lightning-talk slides shared by the speakers.</p>
+    <div class="tabs" role="tablist" aria-label="Slide decks">
+      <button class="tab" role="tab" aria-selected="true" data-deck="session" data-pdf="slides/symbolic-trustworthy-reasoning-bof.pdf">Session slides <span>· Shreya Rajpal</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-deck="lego" data-pdf="slides/chen-lego-legal-reasoning.pdf">LEGO <span>· Qingjing Chen</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-deck="sela" data-pdf="slides/wan-sela-grammar-of-the-wave.pdf">Grammar of the Wave <span>· Sky Chenwei Wan</span></button>
     </div>
-    <div class="viewer">
-      <object data="slides/symbolic-trustworthy-reasoning-bof.pdf#view=FitH" type="application/pdf" aria-label="Session slides (PDF)">
+    <div class="slide-actions">
+      <a class="btn btn-green" id="deck-open" href="slides/symbolic-trustworthy-reasoning-bof.pdf" target="_blank" rel="noopener">Open full screen</a>
+      <a class="btn btn-outline" id="deck-download" href="slides/symbolic-trustworthy-reasoning-bof.pdf" download>Download PDF</a>
+    </div>
+    <div class="viewer" id="deck-viewer">
+      <object data="slides/symbolic-trustworthy-reasoning-bof.pdf#view=FitH" type="application/pdf" aria-label="Slides (PDF)">
         <div class="fallback">Your browser can't show the PDF here. <a href="slides/symbolic-trustworthy-reasoning-bof.pdf">Open or download the slides</a>.</div>
       </object>
     </div>
@@ -271,5 +285,21 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var viewer=document.getElementById('deck-viewer');
+  function show(key){
+    var tab=tabs.filter(function(t){return t.dataset.deck===key})[0]; if(!tab) return;
+    tabs.forEach(function(t){t.setAttribute('aria-selected', t===tab?'true':'false')});
+    var pdf=tab.dataset.pdf;
+    document.getElementById('deck-open').href=pdf;
+    document.getElementById('deck-download').href=pdf;
+    viewer.innerHTML='<object data="'+pdf+'#view=FitH" type="application/pdf" aria-label="Slides (PDF)"><div class="fallback">Your browser cannot show the PDF here. <a href="'+pdf+'">Open or download the slides</a>.</div></object>';
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.deck)})});
+  [].forEach.call(document.querySelectorAll('[data-show]'),function(a){a.addEventListener('click',function(){show(a.dataset.show)})});
+})();
+</script>
 </body>
 </html>
