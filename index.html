@@ -7,6 +7,11 @@
 <meta name="description" content="EMNLP 2026 Birds of a Feather session on symbolic and trustworthy reasoning across language and vision. Budapest, 27 October 2026, 9:00–10:30, Room G12.">
 <meta property="og:title" content="Symbolic and Trustworthy Reasoning Across Language and Vision">
 <meta property="og:description" content="EMNLP 2026 Birds of a Feather · Budapest · 27 Oct, 9:00–10:30 · Room G12">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:image" content="img/symbolictrust-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,7 +36,11 @@
   nav .wrap::-webkit-scrollbar{display:none}
   nav a{color:#dfeadf;text-decoration:none;font-size:.92rem;font-weight:500}
   nav a:hover{color:var(--lime)}
-  nav .brand{font-family:var(--serif);font-weight:700;color:#fff;margin-right:auto}
+  nav .brand{font-family:var(--serif);font-weight:700;color:#fff;margin-right:auto;display:flex;align-items:center;gap:10px}
+  nav .brand img{background:#fff;border-radius:7px;padding:3px;width:30px;height:30px}
+  nav .brand span{font-family:var(--sans);font-weight:500;font-size:.85rem;color:#bcd0c4}
+  .st-logo{display:block;width:100%;max-width:300px;height:auto;margin:0 auto}
+  @media (max-width:520px){nav .brand span{display:none}}
 
   header{background:var(--green);color:#fff;padding:56px 0 64px}
   header .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:center}
@@ -133,7 +142,7 @@
 
 <nav aria-label="Sections">
   <div class="wrap">
-    <a class="brand" href="#top">BoF · EMNLP 2026</a>
+    <a class="brand" href="#top"><img src="img/shield-96.png" alt="" width="30" height="30">Symbolic Trust <span>· EMNLP 2026 BoF</span></a>
     <a href="#program">Program</a>
     <a href="#talks">Lightning talks</a>
     <a href="#panel">Panel</a>
@@ -159,6 +168,8 @@
       <p class="organizer">Organized by Shreya Rajpal, Michigan State University</p>
     </div>
     <div class="logos" aria-label="Organized at">
+      <img class="st-logo" src="img/symbolictrust-logo.png" alt="Symbolic Trust logo: a shield containing a reasoning tree and a check mark" width="900" height="689">
+      <hr>
       <a class="logo-row" href="https://msu.edu/"><img class="msu" src="img/msu-spartan.svg" alt="Michigan State University Spartan helmet logo" width="64" height="74"><div><strong>Michigan State University</strong><span>East Lansing, Michigan</span></div></a>
       <hr>
       <a class="logo-row" href="https://hlr.github.io/"><img class="hlr" src="img/hlr-logo.png" alt="Heterogeneous Learning and Reasoning (HLR) Lab logo" width="110" height="92"><div><strong>HLR Lab</strong><span>Heterogeneous Learning and Reasoning</span></div></a>
