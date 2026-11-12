@@ -3,15 +3,392 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Symbolic &amp; Trustworthy Reasoning · EMNLP 2026 BoF</title>
-<meta name="description" content="EMNLP 2026 Birds of a Feather session on symbolic and trustworthy reasoning across language and vision. Budapest, 27 October 2026, 9:00–10:30, Room G12.">
-<meta property="og:title" content="Symbolic and Trustworthy Reasoning Across Language and Vision">
-<meta property="og:description" content="EMNLP 2026 Birds of a Feather · Budapest · 27 Oct, 9:00–10:30 · Room G12">
+<title>Symbolic &amp; Trustworthy Reasoning | Shreya Rajpal · EMNLP 2026 BoF</title>
+<meta name="description" content="Symbolic Trust: an EMNLP 2026 Birds of a Feather session organized by Shreya Rajpal (Michigan State University, HLR Lab) on neuro-symbolic methods for faithful, verifiable and trustworthy reasoning in LLMs and VLMs. Slides, papers, lightning talks and panel.">
+<meta name="keywords" content="Shreya Rajpal, symbolic reasoning, neuro-symbolic AI, trustworthy reasoning, trustworthiness, reasoning faithfulness, explainability, interpretability, spatial reasoning, LLM reasoning, vision-language models, EMNLP 2026, Birds of a Feather, Michigan State University, HLR Lab">
+<meta name="author" content="Shreya Rajpal">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://shreyarajpal12.github.io/symbolictrust/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Symbolic Trust">
+<meta property="og:url" content="https://shreyarajpal12.github.io/symbolictrust/">
+<meta property="og:title" content="Symbolic and Trustworthy Reasoning Across Language and Vision · EMNLP 2026 BoF">
+<meta property="og:description" content="EMNLP 2026 Birds of a Feather organized by Shreya Rajpal (Michigan State University). Neuro-symbolic methods for faithful, verifiable and trustworthy reasoning: slides, papers, lightning talks and panel.">
+<meta property="og:image" content="https://shreyarajpal12.github.io/symbolictrust/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Symbolic Trust logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Symbolic and Trustworthy Reasoning · EMNLP 2026 BoF">
+<meta name="twitter:description" content="Organized by Shreya Rajpal (MSU). Neuro-symbolic methods for faithful, verifiable and trustworthy reasoning in language and vision.">
+<meta name="twitter:image" content="https://shreyarajpal12.github.io/symbolictrust/img/og-image.png">
+<meta name="theme-color" content="#1f4a3a">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Event",
+ "name": "Symbolic and Trustworthy Reasoning Across Language and Vision (EMNLP 2026 Birds of a Feather)",
+ "alternateName": "Symbolic Trust",
+ "description": "EMNLP 2026 Birds of a Feather session organized by Shreya Rajpal (Michigan State University) on neuro-symbolic methods for faithful, verifiable and trustworthy reasoning in language and vision models, with a panel, lightning talks and open discussion.",
+ "url": "https://shreyarajpal12.github.io/symbolictrust/",
+ "image": "https://shreyarajpal12.github.io/symbolictrust/img/og-image.png",
+ "startDate": "2026-10-27T09:00:00+01:00",
+ "endDate": "2026-10-27T10:30:00+01:00",
+ "eventStatus": "https://schema.org/EventScheduled",
+ "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+ "location": {
+  "@type": "Place",
+  "name": "EMNLP 2026, Room G12",
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Budapest",
+   "addressCountry": "HU"
+  }
+ },
+ "superEvent": {
+  "@type": "Event",
+  "name": "EMNLP 2026: Conference on Empirical Methods in Natural Language Processing",
+  "url": "https://2026.emnlp.org/"
+ },
+ "organizer": [
+  {
+   "@type": "Person",
+   "name": "Shreya Rajpal",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Michigan State University"
+   },
+   "sameAs": [
+    "https://github.com/Shreyarajpal12"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "name": "Heterogeneous Learning and Reasoning (HLR) Lab, Michigan State University",
+   "url": "https://hlr.github.io/"
+  }
+ ],
+ "performer": [
+  {
+   "@type": "Person",
+   "name": "Shreya Rajpal",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Michigan State University"
+   },
+   "sameAs": [
+    "https://github.com/Shreyarajpal12"
+   ]
+  },
+  {
+   "@type": "Person",
+   "name": "Gokul S Krishnan",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Centre for Responsible AI, IIT Madras"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Qingjing Chen",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Bologna"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Sky Chenwei Wan",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "SLB AI Lab and Télécom Paris"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Daniel Preotiuc-Pietro",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Bloomberg"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Leslie Barrett",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Bloomberg Law"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Parisa Kordjamshidi",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Michigan State University"
+   }
+  },
+  {
+   "@type": "Person",
+   "name": "Artem Shelmanov",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "MBZUAI"
+   }
+  }
+ ],
+ "keywords": "Shreya Rajpal, symbolic reasoning, neuro-symbolic AI, trustworthy reasoning, trustworthiness, faithfulness, explainability, spatial reasoning, LLMs, VLMs, EMNLP 2026"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ItemList",
+ "name": "Papers presented at the Symbolic and Trustworthy Reasoning BoF",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "Spatial Reasoning via Modality Switching Between Language and Symbolic Representations",
+    "name": "Spatial Reasoning via Modality Switching Between Language and Symbolic Representations",
+    "url": "https://arxiv.org/abs/2606.31285",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Shreya Rajpal"
+     },
+     {
+      "@type": "Person",
+      "name": "Tanawan Premsri"
+     },
+     {
+      "@type": "Person",
+      "name": "Parisa Kordjamshidi"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "Findings of EMNLP 2026"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "SATURN: Symbolic Spatial Reasoning for Multi-Perspective Grounding",
+    "name": "SATURN: Symbolic Spatial Reasoning for Multi-Perspective Grounding",
+    "url": "https://arxiv.org/abs/2606.22694",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Danial Kamali"
+     },
+     {
+      "@type": "Person",
+      "name": "Tanawan Premsri"
+     },
+     {
+      "@type": "Person",
+      "name": "Shreya Rajpal"
+     },
+     {
+      "@type": "Person",
+      "name": "Amir Zadeh"
+     },
+     {
+      "@type": "Person",
+      "name": "Chuan Li"
+     },
+     {
+      "@type": "Person",
+      "name": "Parisa Kordjamshidi"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "EMNLP 2026"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "LExT: Towards Evaluating Trustworthiness of Natural Language Explanations",
+    "name": "LExT: Towards Evaluating Trustworthiness of Natural Language Explanations",
+    "url": "https://arxiv.org/abs/2504.06227",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Krithi Shailya"
+     },
+     {
+      "@type": "Person",
+      "name": "Shreya Rajpal"
+     },
+     {
+      "@type": "Person",
+      "name": "Gokul S Krishnan"
+     },
+     {
+      "@type": "Person",
+      "name": "Balaraman Ravindran"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "FAccT 2025"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 4,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+    "name": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+    "url": "https://arxiv.org/abs/2607.24730",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Krithi Shailya"
+     },
+     {
+      "@type": "Person",
+      "name": "Ananya Lakshmi Ravi"
+     },
+     {
+      "@type": "Person",
+      "name": "Venkatanathan K. V."
+     },
+     {
+      "@type": "Person",
+      "name": "Sowmya S. Sundaram"
+     },
+     {
+      "@type": "Person",
+      "name": "Gokul S. Krishnan"
+     },
+     {
+      "@type": "Person",
+      "name": "Aditi Anand"
+     },
+     {
+      "@type": "Person",
+      "name": "Balaraman Ravindran"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "MICCAI 2026"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 5,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning",
+    "name": "LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning",
+    "url": "https://arxiv.org/abs/2609.27009",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Qingjing Chen"
+     },
+     {
+      "@type": "Person",
+      "name": "Junkai Zhang"
+     },
+     {
+      "@type": "Person",
+      "name": "Shaochun Wang"
+     },
+     {
+      "@type": "Person",
+      "name": "Jiahao Ding"
+     },
+     {
+      "@type": "Person",
+      "name": "Siyuan Zheng"
+     },
+     {
+      "@type": "Person",
+      "name": "Yukun Yan"
+     },
+     {
+      "@type": "Person",
+      "name": "Zhi Zheng"
+     },
+     {
+      "@type": "Person",
+      "name": "Antonino Rotolo"
+     },
+     {
+      "@type": "Person",
+      "name": "Yun Liu"
+     },
+     {
+      "@type": "Person",
+      "name": "Weixing Shen"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "Findings of EMNLP 2026"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 6,
+   "item": {
+    "@type": "ScholarlyArticle",
+    "headline": "Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents",
+    "name": "Grammar of the Wave: Towards Explainable Multivariate Time Series Event Detection via Neuro-Symbolic VLM Agents",
+    "url": "https://arxiv.org/abs/2603.11479",
+    "author": [
+     {
+      "@type": "Person",
+      "name": "Sky Chenwei Wan"
+     },
+     {
+      "@type": "Person",
+      "name": "Yifei Y. Wang"
+     },
+     {
+      "@type": "Person",
+      "name": "Tianjun Hou"
+     },
+     {
+      "@type": "Person",
+      "name": "Xiqing Chang"
+     },
+     {
+      "@type": "Person",
+      "name": "Aymeric Jan"
+     }
+    ],
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "EMNLP 2026"
+    }
+   }
+  }
+ ]
+}
+</script>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta property="og:image" content="img/symbolictrust-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
